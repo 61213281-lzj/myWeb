@@ -5,10 +5,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>聯絡我們｜行管系</title>
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -37,9 +36,7 @@
       font-weight: bold;
     }
 
-    nav a:hover {
-      color: #b9d8ff;
-    }
+    nav a:hover { color: #b9d8ff; }
 
     .container {
       max-width: 850px;
@@ -95,8 +92,17 @@
       cursor: pointer;
     }
 
-    button:hover {
-      background: #284d78;
+    button:hover { background: #284d78; }
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 18px;
+      text-align: center;
+      font-weight: bold;
     }
 
     footer {
@@ -119,6 +125,8 @@
       }
     }
   </style>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -136,36 +144,75 @@
 
   <main class="container">
     <h2>聯絡我們</h2>
+
     <p class="intro">
       如果您有任何問題或合作需求，歡迎填寫以下表單，
       我們收到訊息後將盡快與您聯繫。
     </p>
 
-    <form action="https://formsubmit.co/f921219@gmail.com" method="POST">
-
-      <input type="hidden" name="_subject" value="行管系網站收到新的聯絡表單">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
+    <form id="contact-form">
 
       <label for="name">姓名 *</label>
-      <input type="text" id="name" name="姓名" placeholder="請輸入您的姓名" required>
+      <input type="text" id="name" name="name"
+             placeholder="請輸入您的姓名" required>
 
       <label for="phone">聯絡電話 *</label>
-      <input type="tel" id="phone" name="電話" placeholder="請輸入您的電話" required>
+      <input type="tel" id="phone" name="phone"
+             placeholder="請輸入您的電話" required>
 
       <label for="email">電子郵件 *</label>
-      <input type="email" id="email" name="Email" placeholder="請輸入您的電子郵件" required>
+      <input type="email" id="email" name="email"
+             placeholder="請輸入您的電子郵件" required>
 
       <label for="message">聯絡內容 *</label>
-      <textarea id="message" name="聯絡內容" placeholder="請輸入您想詢問的內容" required></textarea>
+      <textarea id="message" name="message"
+                placeholder="請輸入您想詢問的內容" required></textarea>
 
-      <button type="submit">送出表單</button>
+      <button type="submit" id="submit-btn">送出表單</button>
+
+      <p id="status" role="status"></p>
     </form>
   </main>
 
   <footer>
     <p>© 2026 行管系企業形象網站｜All Rights Reserved.</p>
   </footer>
+
+  <script>
+    // 請將 YOUR_PUBLIC_KEY 替換成 EmailJS 的 Public Key
+    emailjs.init({
+      publicKey: "mLTEWM_jMY34-apiV"
+    });
+
+    const form = document.getElementById("contact-form");
+    const button = document.getElementById("submit-btn");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      button.disabled = true;
+      button.textContent = "傳送中...";
+      status.textContent = "";
+
+      emailjs.sendForm(
+        "service_w96q55k",
+        "template_ywxfsm",
+        form
+      ).then(function() {
+        status.style.color = "green";
+        status.textContent = "表單已成功送出，感謝您的聯絡！";
+        form.reset();
+      }).catch(function(error) {
+        console.error("EmailJS error:", error);
+        status.style.color = "red";
+        status.textContent = "送出失敗，請稍後再試。";
+      }).finally(function() {
+        button.disabled = false;
+        button.textContent = "送出表單";
+      });
+    });
+  </script>
 
 </body>
 </html>
