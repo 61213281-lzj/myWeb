@@ -1,0 +1,309 @@
+
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="行管系公司介紹與服務理念">
+  <title>公司介紹｜行管系</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, "Microsoft JhengHei", sans-serif;
+      color: #243247;
+      background: #f6f8fb;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    header {
+      background: #142b4a;
+      color: white;
+    }
+
+    .nav-wrap {
+      max-width: 1100px;
+      margin: auto;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .brand {
+      font-size: 22px;
+      font-weight: bold;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      color: white;
+    }
+
+    nav a:hover {
+      color: #9fc5ed;
+    }
+
+    .page-hero {
+      background: #eaf1f8;
+      padding: 65px 24px;
+    }
+
+    .page-hero .inner {
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .page-hero h1 {
+      color: #142b4a;
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    .page-hero p {
+      color: #64748b;
+      font-size: 18px;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 60px 24px;
+    }
+
+    .section-title {
+      color: #142b4a;
+      font-size: 30px;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 35px;
+      align-items: center;
+    }
+
+    .panel {
+      background: #eaf1f8;
+      border-radius: 12px;
+      padding: 30px;
+    }
+
+    .panel h3 {
+      color: #142b4a;
+    }
+
+    .panel li {
+      margin-bottom: 12px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 28px;
+      border-radius: 12px;
+      border: 1px solid #dce5ef;
+      box-shadow: 0 5px 20px #142b4a0c;
+    }
+
+    .card h3 {
+      color: #245b91;
+    }
+
+    .number {
+      font-size: 30px;
+      font-weight: bold;
+      color: #245b91;
+    }
+
+    .contact-banner {
+      background: #142b4a;
+      color: white;
+      text-align: center;
+      padding: 45px 20px;
+    }
+
+    .contact-banner h2 {
+      font-size: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: white;
+      color: #142b4a;
+      padding: 12px 25px;
+      border-radius: 6px;
+      margin-top: 15px;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #10233d;
+      color: white;
+      text-align: center;
+      padding: 22px;
+    }
+
+    @media (max-width: 700px) {
+      .nav-wrap {
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      nav {
+        gap: 16px;
+      }
+
+      .page-hero h1 {
+        font-size: 34px;
+      }
+
+      .split,
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a class="brand" href="index.html">
+        行管系｜企業形象網站
+      </a>
+
+      <nav>
+        <a href="index.html">首頁</a>
+        <a href="about.html">公司介紹</a>
+        <a href="contact.html">聯絡我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="page-hero">
+      <div class="inner">
+        <p>ABOUT US</p>
+        <h1>公司介紹</h1>
+        <p>認識我們的理念、目標與服務方向。</p>
+      </div>
+    </section>
+
+    <section class="container">
+      <div class="split">
+
+        <div>
+          <h2 class="section-title">關於行管系</h2>
+
+          <p>
+            行管系以管理與行銷相關知識為基礎，
+            重視理論與實務的結合。
+            我們透過專業的管理思維與創新想法，
+            提供良好的服務體驗。
+          </p>
+
+          <p>
+            這個網站以企業形象網站作為展示，
+            希望透過清楚的資訊架構、
+            友善的使用介面以及便利的聯絡方式，
+            讓每位訪客都能快速認識我們。
+          </p>
+        </div>
+
+        <div class="panel">
+          <h3>我們的經營理念</h3>
+
+          <ul>
+            <li>誠信溝通，建立良好信任。</li>
+            <li>重視顧客需求與服務品質。</li>
+            <li>持續學習，勇於創新。</li>
+            <li>團隊合作，追求共同成長。</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="container">
+      <h2 class="section-title">我們的服務方向</h2>
+
+      <p>
+        透過不同領域的專業知識，
+        提供多元化的服務與解決方案。
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="number">01</div>
+          <h3>行銷企劃</h3>
+          <p>
+            從市場與顧客需求出發，
+            規劃適合的行銷策略與推廣方向。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">02</div>
+          <h3>顧客服務</h3>
+          <p>
+            重視服務流程與顧客體驗，
+            提升服務品質與互動效率。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="number">03</div>
+          <h3>專案管理</h3>
+          <p>
+            透過目標設定、時程規劃與團隊合作，
+            有效完成各項任務。
+          </p>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="contact-banner">
+      <h2>想進一步了解我們嗎？</h2>
+      <p>歡迎透過聯絡表單與我們聯繫。</p>
+      <a href="contact.html" class="btn">
+        聯絡我們 →
+      </a>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 行管系｜企業形象網站</p>
+    <p>用心服務，創造價值</p>
+  </footer>
+
+</body>
+</html>
